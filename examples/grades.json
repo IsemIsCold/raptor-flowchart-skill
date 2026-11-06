@@ -1,0 +1,23 @@
+{
+  "subcharts": [
+    {
+      "name": "main",
+      "body": [
+        {"input": "score", "prompt": "Enter the score (0-100): "},
+        {"comment": "Classify the score into a letter grade",
+         "if": "score >= 90", "then": [{"assign": "grade", "value": "\"A\""}],
+         "else": [
+           {"if": "score >= 80", "then": [{"assign": "grade", "value": "\"B\""}],
+            "else": [
+              {"if": "score >= 70", "then": [{"assign": "grade", "value": "\"C\""}],
+               "else": [
+                 {"if": "score >= 60", "then": [{"assign": "grade", "value": "\"D\""}],
+                  "else": [{"assign": "grade", "value": "\"F\""}]}
+               ]}
+            ]}
+         ]},
+        {"output": "\"Grade: \" + grade"}
+      ]
+    }
+  ]
+}

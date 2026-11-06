@@ -1,0 +1,16 @@
+{
+  "subcharts": [
+    {
+      "name": "main",
+      "body": [
+        {"input": "n", "prompt": "Table size: "},
+        {"for": "row", "from": "1", "to": "n", "body": [
+          {"for": "col", "from": "1", "to": "n", "body": [
+            {"output": "row * col + \"  \"", "newline": false}
+          ]},
+          {"output": "\"\""}
+        ]}
+      ]
+    }
+  ]
+}

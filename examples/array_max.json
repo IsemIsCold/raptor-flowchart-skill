@@ -1,0 +1,28 @@
+{
+  "subcharts": [
+    {
+      "name": "main",
+      "body": [
+        {"input": "count", "prompt": "How many numbers? "},
+        {"for": "i", "from": "1", "to": "count", "body": [
+          {"input": "values[i]", "prompt": "\"Number \" + i + \": \""}
+        ]},
+        {"call": "FindLargest"},
+        {"output": "\"Largest = \" + largest + \" (position \" + position + \")\""}
+      ]
+    },
+    {
+      "name": "FindLargest",
+      "body": [
+        {"assign": "largest", "value": "values[1]"},
+        {"assign": "position", "value": "1"},
+        {"for": "k", "from": "2", "to": "count", "body": [
+          {"if": "values[k] > largest", "then": [
+            {"assign": "largest", "value": "values[k]"},
+            {"assign": "position", "value": "k"}
+          ]}
+        ]}
+      ]
+    }
+  ]
+}

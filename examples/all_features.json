@@ -1,0 +1,48 @@
+{
+  "subcharts": [
+    {
+      "name": "main",
+      "body": [
+        {"comment": "Read a positive number n (ask again until it is valid)",
+         "repeat": [
+           {"input": "n", "prompt": "Enter a positive whole number"}
+         ],
+         "until": "n > 0 and n = floor(n)"},
+        {"assign": "sum", "value": "0"},
+        {"for": "i", "from": "1", "to": "n", "body": [
+          {"assign": "sum", "value": "sum + i"}
+        ]},
+        {"output": "\"Sum of 1..\" + n + \" = \" + sum"},
+        {"if": "n mod 2 = 0",
+         "then": [{"output": "\"n is even\""}],
+         "else": [{"output": "\"n is odd\""}]},
+        {"assign": "count", "value": "n"},
+        {"while": "count > 0", "body": [
+          {"call": "PrintStar"},
+          {"assign": "count", "value": "count - 1"}
+        ]},
+        {"output": "\"\"", "newline": true},
+        {"assign": "a", "value": "3"},
+        {"assign": "b", "value": "7"},
+        {"call": "Swap(a, b)"},
+        {"output": "\"a = \" + a + \", b = \" + b"},
+        {"if": "a <> b", "then": [{"output": "\"different\""}]}
+      ]
+    },
+    {
+      "name": "PrintStar",
+      "body": [
+        {"output": "\"*\"", "newline": false}
+      ]
+    },
+    {
+      "name": "Swap",
+      "params": ["in out x", "in out y"],
+      "body": [
+        {"assign": "temp", "value": "x"},
+        {"assign": "x", "value": "y"},
+        {"assign": "y", "value": "temp"}
+      ]
+    }
+  ]
+}
