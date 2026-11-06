@@ -1,0 +1,13 @@
+{
+  "name": "raptor-flowchart",
+  "displayName": "RAPTOR Flowchart Builder",
+  "description": "Create, check, fix or convert RAPTOR flowchart (.rap) files that open in RAPTOR with every symbol intact. Builds the exact XML RAPTOR saves and checks each symbol with a port of RAPTOR's own parser.",
+  "author": {
+    "name": "IsemIsCold",
+    "url": "https://github.com/IsemIsCold"
+  },
+  "homepage": "https://github.com/IsemIsCold/raptor-flowchart-skill",
+  "repository": "https://github.com/IsemIsCold/raptor-flowchart-skill",
+  "license": "MIT",
+  "keywords": ["raptor", "flowchart", "education", "programming-basics", "rap"]
+}

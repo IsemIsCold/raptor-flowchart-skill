@@ -1,0 +1,14 @@
+{
+  "name": "raptor-flowchart-skill",
+  "description": "RAPTOR flowchart tools for Claude Code",
+  "owner": {
+    "name": "IsemIsCold"
+  },
+  "plugins": [
+    {
+      "name": "raptor-flowchart",
+      "source": "./",
+      "description": "Build valid RAPTOR .rap flowchart files from a simple JSON spec"
+    }
+  ]
+}
