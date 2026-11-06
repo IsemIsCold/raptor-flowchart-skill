@@ -402,6 +402,15 @@ def unassigned_warnings(charts):
                         if pin:
                             sc['use'] += [(i, n.text) for i in a]
                     ids = []
+                elif re.match(r'\s*get_mouse_button\s*\(', n.text, re.I):
+                    # Get_Mouse_Button(button, x, y) stores the click position in x and y
+                    args = _split_args(re.sub(r'^[^(]*\(|\)\s*;?\s*$', '', n.text))
+                    for arg in args[1:3]:
+                        a = _idents(arg)
+                        if a:
+                            sc['set'].add(a[0])
+                    sc['use'] += [(i, n.text) for i in _idents(args[0])]
+                    ids = []
                 sc['use'] += [(i, n.text) for i in ids]
             elif n.kind in ('output', 'if', 'loop'):
                 sc['use'] += [(i, n.text) for i in _idents(n.text)]
